@@ -25,7 +25,7 @@ const Home = () => {
 	return (
 		<div className="flex w-full flex-col">
 			<section className="flex h-[60vh] w-full flex-col items-center justify-center">
-				<h1 className="mb-3 text-5xl font-semibold text-primary">
+				<h1 className="mb-3 text-center text-5xl font-semibold text-primary">
 					The largest API marketplace in Nigeria
 				</h1>
 				<p className="mb-5 text-xl">Get the best value for your money</p>
@@ -46,7 +46,7 @@ const Home = () => {
 				<p className={styles.subheading}>
 					APIs that are popular and frequently used on Nexus
 				</p>
-				<div className="mt-5 grid w-full grid-cols-1 gap-5 lg:grid-cols-5">
+				<div className="mt-5 grid w-full grid-cols-2 gap-5 lg:grid-cols-5">
 					{popular?.slice(0, 5).map((api) => <Card key={api.id} {...api} />)}
 				</div>
 			</section>
@@ -60,7 +60,7 @@ const Home = () => {
 				<p className={styles.subheading}>
 					APIs that are popular and frequently used on Nexus
 				</p>
-				<div className="mt-5 grid w-full grid-cols-1 gap-5 lg:grid-cols-5">
+				<div className="mt-5 grid w-full grid-cols-2 gap-5 lg:grid-cols-5">
 					{recommended?.slice(0, 5).map((api) => <Card key={api.id} {...api} />)}
 				</div>
 			</section>

@@ -2,23 +2,24 @@ import { GoogleLogo } from "@phosphor-icons/react"
 import { Link } from "react-router-dom"
 import { useFormik } from "formik"
 
-import { Button, Input } from "components"
+import { Button, Checkbox, Input } from "components"
 
 const initialValues = {
 	email: "",
 	password: "",
+	remember_password: false,
 }
 
 const Signin = () => {
-	const { errors, handleChange, handleSubmit } = useFormik({
+	const { errors, handleChange, handleSubmit, values } = useFormik({
 		initialValues,
 		onSubmit: (data) => console.log(data),
 	})
 
 	return (
 		<div className="flex h-screen w-full items-center">
-			<div className="h-full w-2/3 bg-gray-300"></div>
-			<div className="grid h-full w-1/3 place-items-center bg-light">
+			<div className="h-full w-0 bg-gray-300 lg:w-2/3"></div>
+			<div className="grid h-full w-full place-items-center bg-light lg:w-1/3">
 				<div className="flex w-full flex-col items-center">
 					<Link to="/" className="text-2xl font-bold">
 						Nexus
@@ -47,8 +48,13 @@ const Signin = () => {
 							error={errors.password}
 						/>
 						<div className="flex w-full items-center justify-between text-xs text-gray-500">
-							<div className="">Remember me</div>
-							<Link to="/" className="underline">
+							<Checkbox
+								label="Remember me"
+								checked={values.remember_password}
+								name="remember_password"
+								onChange={handleChange}
+							/>
+							<Link to="/forgot-password" className="underline">
 								Forgot password?
 							</Link>
 						</div>

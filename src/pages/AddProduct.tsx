@@ -38,7 +38,7 @@ const AddProduct = () => {
 			<div className="flex w-full flex-col items-center">
 				<p className="mb-10 text-3xl font-light">Add API</p>
 				<form onSubmit={handleSubmit} className="flex w-full flex-col">
-					<div className="grid w-full grid-cols-2 gap-x-5 gap-y-4">
+					<div className="grid w-full grid-cols-1 gap-x-5 gap-y-4 lg:grid-cols-2">
 						<Input
 							element="input"
 							type="text"

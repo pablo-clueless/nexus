@@ -1,6 +1,11 @@
 import { Link, useNavigate, useParams } from "react-router-dom"
-import { ArrowLeft } from "@phosphor-icons/react"
 import { useState } from "react"
+import {
+	ArrowLeft,
+	ChartLineUp,
+	ShieldCheck,
+	Timer,
+} from "@phosphor-icons/react"
 
 import { tabList } from "constants"
 import data from "mock.json"
@@ -33,32 +38,66 @@ const Product = () => {
 					<ArrowLeft />
 				</button>
 			</div>
-			<div className="flex items-center gap-4 border-y py-5">
-				<img src={api.logo} alt={api.name} className={styles.image} />
-				<div className="flex flex-col">
-					<p className="mb-4 text-4xl font-light">{api.name}</p>
-					<div className="flex items-center gap-5 text-sm capitalize">
-						<p>
-							published by:{" "}
-							<Link
-								to={`/user/${api.created_by.id}`}
-								className="font-semibold underline">
-								{api.created_by.name}
-							</Link>
+			<div className="flex items-center justify-between border-y py-5">
+				<div className="flex flex-1 items-center gap-4">
+					<img src={api.logo} alt={api.name} className={styles.image} />
+					<div className="flex flex-col">
+						<p className="mb-4 text-4xl font-light">{api.name}</p>
+						<div className="flex items-center gap-5 text-sm capitalize">
+							<p>
+								published by:{" "}
+								<Link
+									to={`/user/${api.created_by.id}`}
+									className="font-semibold underline">
+									{api.created_by.name}
+								</Link>
+							</p>
+							<p>
+								created:{" "}
+								<span className="font-semibold">
+									{new Date(api.created_on).toLocaleDateString()}
+								</span>
+							</p>
+							<p>
+								category:{" "}
+								<Link
+									to={`/category/${api.category}`}
+									className="font-semibold underline">
+									{api.category}
+								</Link>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div className="flex flex-1 items-center gap-4">
+					<div className="flex flex-1 flex-col items-center">
+						<p className="flex items-center gap-1 text-sm text-gray-500">
+							<ChartLineUp />
+							Popularity
 						</p>
-						<p>
-							created:{" "}
-							<span className="font-semibold">
-								{new Date(api.created_on).toLocaleDateString()}
-							</span>
+						<p className="text-3xl font-medium">
+							{api.popularity}
+							<span className="text-base">/10</span>
 						</p>
-						<p>
-							category:{" "}
-							<Link
-								to={`/category/${api.category}`}
-								className="font-semibold underline">
-								{api.category}
-							</Link>
+					</div>
+					<div className="flex flex-1 flex-col items-center">
+						<p className="flex items-center gap-1 text-sm text-gray-500">
+							<Timer />
+							Latency
+						</p>
+						<p className="text-3xl font-medium">
+							{api.popularity * api.version * 10}
+							<span className="text-base">ms</span>
+						</p>
+					</div>
+					<div className="flex flex-1 flex-col items-center">
+						<p className="flex items-center gap-1 text-sm text-gray-500">
+							<ShieldCheck />
+							Service Level
+						</p>
+						<p className="text-3xl font-medium">
+							{api.service_level}
+							<span className="text-base">%</span>
 						</p>
 					</div>
 				</div>

@@ -1,14 +1,17 @@
 // layouts
+export { default as DashboardLayout } from "./layouts/DashboardLayout"
 export { default as MainLayout } from "./layouts/MainLayout"
 
 // shared
 export { default as Button } from "./shared/Button"
 export { default as Card } from "./shared/Card"
+export { default as Checkbox } from "./shared/Checkbox"
 export { default as ErrorFallback } from "./shared/ErrorFallback"
 export { default as Footer } from "./shared/Footer"
 export { default as Input } from "./shared/Input"
 export { default as Loader } from "./shared/Loader"
 export { default as Pagination } from "./shared/Pagination"
+export { default as Spinner } from "./shared/Spinner"
 export { default as TabPanel } from "./shared/TabPanel"
 
 // api

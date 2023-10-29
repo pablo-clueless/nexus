@@ -1,16 +1,18 @@
 import { Route, Routes } from "react-router-dom"
 import { Suspense } from "react"
 
-import { Loader, MainLayout } from "components"
+import { DashboardLayout, Loader, MainLayout } from "components"
 import PrivateRoute from "./PrivateRoute"
 import {
 	AddProduct,
 	Category,
 	Docs,
+	ForgotPassword,
 	Home,
 	Pricing,
 	Product,
 	Products,
+	Profile,
 	Resources,
 	Signin,
 	Signup,
@@ -21,8 +23,8 @@ const Router = () => {
 	return (
 		<Suspense fallback={<Loader />}>
 			<Routes>
-				<Route path="/" element={<MainLayout />}>
-					<Route index element={<Home />} />
+				<Route element={<MainLayout />}>
+					<Route path="/" element={<Home />} />
 					<Route path="/api" element={<Products />} />
 					<Route path="/api/:id" element={<Product />} />
 					<Route path="/user/:id" element={<User />} />
@@ -34,8 +36,14 @@ const Router = () => {
 						<Route path="/api/new" element={<AddProduct />} />
 					</Route>
 				</Route>
-				<Route path="signin" element={<Signin />} />
-				<Route path="signup" element={<Signup />} />
+				<Route path="/signin" element={<Signin />} />
+				<Route path="/signup" element={<Signup />} />
+				<Route path="/forgot-password" element={<ForgotPassword />} />
+				<Route element={<PrivateRoute />}>
+					<Route path="/dashboard" element={<DashboardLayout />}>
+						<Route index element={<Profile />} />
+					</Route>
+				</Route>
 			</Routes>
 		</Suspense>
 	)

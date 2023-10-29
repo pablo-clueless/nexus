@@ -57,7 +57,7 @@ const Products = () => {
 
 	return (
 		<div className="flex w-full flex-col">
-			<div className="flex w-full items-center justify-between">
+			<div className="flex w-full flex-col items-center justify-between gap-4 lg:flex-row">
 				<Input
 					element="input"
 					type="text"
@@ -76,7 +76,7 @@ const Products = () => {
 					))}
 				</Input>
 			</div>
-			<div className="mt-10 grid w-full grid-cols-1 gap-5 lg:grid-cols-5">
+			<div className="mt-10 grid w-full grid-cols-2 gap-5 lg:grid-cols-5">
 				{renderData().map((api) => (
 					<Card key={api.id} {...api} />
 				))}

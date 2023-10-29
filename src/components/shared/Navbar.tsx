@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom"
+import { List } from "@phosphor-icons/react"
 
 import { navLinks } from "constants"
 import Button from "./Button"
@@ -9,7 +10,7 @@ const Navbar = () => {
 			<Link to="/" className="font-bold">
 				Nexus
 			</Link>
-			<div className="flex items-center gap-4">
+			<div className="hidden items-center gap-4 lg:flex">
 				{navLinks.map((link) => (
 					<NavLink
 						key={link.to}
@@ -21,13 +22,18 @@ const Navbar = () => {
 					</NavLink>
 				))}
 			</div>
-			<div className="flex items-center gap-4">
+			<div className="hidden items-center gap-4 lg:flex">
 				<Button as="link" href="/signin" variant="filled">
 					signin
 				</Button>
 				<Button as="link" href="/signup" variant="outlined">
 					get started
 				</Button>
+			</div>
+			<div className="block lg:hidden">
+				<button className="button text-xl">
+					<List />
+				</button>
 			</div>
 		</nav>
 	)

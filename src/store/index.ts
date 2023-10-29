@@ -10,7 +10,7 @@ interface State {
 }
 
 const state = proxy<State>({
-	isLoggedin: true,
+	isLoggedin: false,
 	login: (payload) => {
 		state.user = payload
 		state.isLoggedin = true

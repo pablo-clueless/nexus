@@ -18,15 +18,17 @@ const Signup = () => {
 
 	return (
 		<div className="flex h-screen w-full items-center">
-			<div className="h-full w-2/3 bg-gray-300"></div>
-			<div className="grid h-full w-1/3 place-items-center bg-light">
+			<div className="h-full w-0 bg-gray-300 lg:w-2/3"></div>
+			<div className="grid h-full w-full place-items-center bg-light lg:w-1/3">
 				<div className="flex w-full flex-col items-center">
 					<Link to="/" className="text-2xl font-bold">
 						Nexus
 					</Link>
 					<div className="mb-10 mt-5 text-center">
 						<p className="text-4xl font-light text-primary">Create Account</p>
-						<p className="text-xs font-medium">Please enter your details</p>
+						<p className="text-xs font-medium">
+							Welcome to Nexus, the largest API marketplace in Nigeria
+						</p>
 					</div>
 					<form onSubmit={handleSubmit} className="flex w-full flex-col gap-4 px-10">
 						<Input

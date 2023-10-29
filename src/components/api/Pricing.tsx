@@ -14,7 +14,7 @@ const Pricing = (props: Props) => {
 				<Link
 					to={`/pricing/${pricing.id}`}
 					key={pricing.id}
-					className="flex h-full w-[250px] flex-col items-center rounded border px-5 py-10 transition-all duration-300 hover:border-primary hover:shadow-2xl">
+					className="flex h-full w-[250px] flex-col items-center rounded border border-gray-300 px-5 py-10 transition-all duration-300 hover:border-primary hover:shadow-2xl">
 					<p className="text-2xl font-medium capitalize">{pricing.name}</p>
 					<p className="mt-10 text-5xl font-light text-primary">
 						{currency("USD", pricing.price)}/

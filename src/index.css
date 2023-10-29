@@ -48,7 +48,7 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 .button {
-	@apply transition-transform duration-300 active:scale-[0.99];
+	@apply transition-transform duration-300 active:scale-[0.98];
 }
 
 /* actives the hover effect on the nav links */
